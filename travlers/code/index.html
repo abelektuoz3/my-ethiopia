@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Ethiopia National Parks</title>
+  </head>
+  <body>
+    <div class="container" role="main">
+      <header>
+        <h1>Ethiopia's National Parks</h1>
+        <p>Explore some of Ethiopia's most stunning parks</p>
+      </header>
+
+      <div class="parks-tabs" role="tablist" aria-label="Select National Park">
+        <button
+          class="tab-button active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="simien"
+          id="tab-simien"
+        >
+          Simien Mountains
+        </button>
+        <button
+          class="tab-button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="bale"
+          id="tab-bale"
+        >
+          Bale Mountains
+        </button>
+        <button
+          class="tab-button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="awash"
+          id="tab-awash"
+        >
+          Awash
+        </button>
+        <button
+          class="tab-button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="nechisar"
+          id="tab-nechisar"
+        >
+          Nechisar
+        </button>
+      </div>
+
+      <section
+        id="simien"
+        class="park-content"
+        role="tabpanel"
+        aria-labelledby="tab-simien"
+        tabindex="0"
+      >
+        <h2 class="park-title">Simien Mountains National Park</h2>
+        <img
+          src="https://c8.alamy.com/comp/2GP8E5K/sunrise-hills-panorama-of-beautiful-semien-or-simien-mountains-national-park-landscape-in-northern-ethiopia-near-lalibela-and-gondar-africa-wildernes-2GP8E5K.jpg"
+          alt="Simien Mountains National Park sunrise"
+          class="park-image"
+        />
+        <p class="park-description">
+          A UNESCO World Heritage site, the Simien Mountains are known for
+          dramatic peaks, deep valleys, and unique wildlife including the
+          Ethiopian wolf and gelada baboon. Hiking here offers breathtaking
+          views and adventure in high altitudes.
+        </p>
+      </section>
+
+      <section
+        id="bale"
+        class="park-content"
+        role="tabpanel"
+        aria-labelledby="tab-bale"
+        tabindex="0"
+        hidden
+      >
+        <h2 class="park-title">Bale Mountains National Park</h2>
+        <img
+          src="http://static.independent.co.uk/s3fs-public/thumbnails/image/2014/10/06/11/bale_national_park.jpg"
+          alt="Bale Mountains landscape"
+          class="park-image"
+        />
+        <p class="park-description">
+          This park is a sanctuary for rare and endemic species, featuring
+          alpine forests, vast moorlands and unique wildlife such as the
+          Mountain Nyala and Ethiopian wolf. It is a premier destination for
+          nature lovers and trekkers.
+        </p>
+      </section>
+
+      <section
+        id="awash"
+        class="park-content"
+        role="tabpanel"
+        aria-labelledby="tab-awash"
+        tabindex="0"
+        hidden
+      >
+        <h2 class="park-title">Awash National Park</h2>
+        <img
+          src="https://c8.alamy.com/comp/W9PDC5/fall-in-awash-national-park-waterfalls-in-awash-wildlife-reserve-in-south-of-ethiopia-wilderness-scene-africa-W9PDC5.jpg"
+          alt="Awash National Park forest"
+          class="park-image"
+        />
+        <p class="park-description">
+          Awash National Park offers a combination of riverine, savanna, and
+          woodland habitats. It is home to impressive waterfalls, wildlife such
+          as baboons, lions, and diverse bird species, making it a beautiful
+          park to explore year-round.
+        </p>
+      </section>
+
+      <section
+        id="nechisar"
+        class="park-content"
+        role="tabpanel"
+        aria-labelledby="tab-nechisar"
+        tabindex="0"
+        hidden
+      >
+        <h2 class="park-title">Nechisar National Park</h2>
+        <img
+          src="https://media-cdn.tripadvisor.com/media/photo-s/05/2c/e2/9e/arbaminich-town-nech.jpg"
+          alt="Nechisar National Park panorama"
+          class="park-image"
+        />
+        <p class="park-description">
+          Located near Lake Abaya and Lake Chamo, Nechisar National Park
+          showcases beautiful savanna landscapes, unique wildlife, and is known
+          for its "Bridge of God" narrow land strip between two lakes. A
+          peaceful spot for wildlife watching.
+        </p>
+      </section>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".tab-button");
+      const panels = document.querySelectorAll(".park-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active state from all tabs and hide panels
+          tabs.forEach((t) => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+          panels.forEach((p) => (p.hidden = true));
+
+          // Make clicked tab active and show corresponding panel
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+          const panelId = tab.getAttribute("aria-controls");
+          const panel = document.getElementById(panelId);
+          panel.hidden = false;
+          panel.focus();
+        });
+      });
+
+      // Keyboard navigation for tabs (left/right arrows)
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("keydown", (e) => {
+          let newIndex = i;
+          if (e.key === "ArrowRight") {
+            newIndex = (i + 1) % tabs.length;
+            tabs[newIndex].focus();
+          } else if (e.key === "ArrowLeft") {
+            newIndex = (i - 1 + tabs.length) % tabs.length;
+            tabs[newIndex].focus();
+          }
+          if (newIndex !== i) {
+            e.preventDefault();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
