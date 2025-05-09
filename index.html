@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Discover Ethiopia</title>
+  </head>
+  <body>
+    <header>
+      <h1>Discover Ethiopia</h1>
+      <p>A vibrant country rich in history, culture, and nature</p>
+    </header>
+    <nav aria-label="Primary navigation">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#culture" class="nav-link">Culture</a>
+      <a href="#history" class="nav-link">History</a>
+      <a href="#parks" class="nav-link">National Parks</a>
+      <a href="#cuisine" class="nav-link">Cuisine</a>
+    </nav>
+
+    <section id="about" tabindex="0" aria-label="About Ethiopia">
+      <h2>About Ethiopia</h2>
+      <p>
+        Ethiopia is a diverse and ancient country located in the Horn of Africa.
+        It is known for its stunning landscapes, unique wildlife, rich cultural
+        heritage, and vibrant people. As one of the oldest nations in the world,
+        Ethiopia offers an extraordinary blend of history and nature.
+      </p>
+      <img
+        src="../travlers/code/resource/shutterstock_1422220883-1536x1536.avif"
+        class="all-img"
+      />
+    </section>
+
+    <section id="culture" tabindex="0" aria-label="Ethiopian Culture">
+      <h2>Culture</h2>
+      <p>
+        Ethiopia is famous for its colorful festivals, distinctive coffee
+        ceremonies, traditional music and dance, and diverse ethnic groups. The
+        Ethiopia Orthodox Church has greatly influenced the arts and daily life.
+        Amharic is the official language, but over 80 languages are spoken.
+      </p>
+      <img src="../travlers/code/resource/maxresdefault.jpg" class="all-img" />
+    </section>
+
+    <section id="history" tabindex="0" aria-label="History of Ethiopia">
+      <h2>History</h2>
+      <p>
+        Ethiopia is considered the cradle of mankind, with archaeological finds
+        dating back millions of years. It was never colonized, preserving its
+        sovereignty and culture. Famous historical sites include Axum’s
+        obelisks, the castles of Gondar, and the rock-hewn churches of Lalibela.
+      </p>
+      <img src="../travlers/code/resource/axum_obelisk.jpg" class="all-img" />
+    </section>
+
+    <section id="parks" tabindex="0" aria-label="National Parks of Ethiopia">
+      <h2>National Parks</h2>
+      <p>
+        Ethiopia offers breathtaking national parks like Simien Mountains, Bale
+        Mountains, and Awash National Park. These parks offer unique wildlife
+        including the Ethiopian wolf, gelada baboon, and diverse bird species,
+        plus spectacular hiking and nature experiences.
+      </p>
+      <img
+        src="../travlers/code/resource/Simien Mountains National Park landscape.jpg"
+        class="all-img"
+      />
+      <div class="btn-container">
+        <a class="btn" href="../travlers/code/index.html">About Parks</a>
+      </div>
+    </section>
+
+    <section id="cuisine" tabindex="0" aria-label="Ethiopian Cuisine">
+      <h2>Cuisine</h2>
+      <p>
+        Ethiopian cuisine is famous worldwide for its injera (flatbread) and
+        spicy stews known as wats. Shared meals and coffee ceremonies are
+        integral parts of Ethiopian hospitality and culture, providing a taste
+        of the country’s warmth and tradition.
+      </p>
+      <img src="../travlers/code/resource/Beyainatu.jpeg" class="all-img" />
+    </section>
+
+    <script>
+      // Smooth scrolling and active nav highlighting
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").slice(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+          document
+            .querySelectorAll("nav a")
+            .forEach((a) => a.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      // Highlight nav link on scroll
+      const sections = [...document.querySelectorAll("section")];
+      const navLinks = [...document.querySelectorAll("nav a")];
+
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + id
+              );
+            });
+          }
+        });
+      }, options);
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
+  </body>
+</html>
