@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="https://pixelz.cc/wp-content/uploads/2018/11/ethiopia-flag-uhd-4k-wallpaper.jpg"
+      type="image/x-icon"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Discover Ethiopia</title>
+    <style>
+      /* Base styles */
+      .btn {
+        background-color: #0071e3;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-right: 15px;
+        text-decoration: none;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+      .btn-container {
+        text-align: center;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", sans-serif;
+        background: rgba(255, 211, 123, 0.799);
+        color: #3e2723;
+        overflow-x: hidden;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px 0 12px;
+        border-bottom: 2px solid #b97a43;
+        width: 100%;
+        margin: 0;
+      }
+
+      header h1 {
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin: 6px 0 6px 0;
+        color: #6d4c41;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        color: #8d6e63;
+        font-weight: 600;
+      }
+
+      nav {
+        margin: 12px 0 24px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        border-bottom: 1.8px solid #d7b27c;
+        gap: 12px;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      nav a {
+        color: #6d4c41;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        background-color: #b97a43;
+        color: #fff8f0;
+      }
+
+      main {
+        width: 100%;
+        margin: 0 auto 40px;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      section {
+        margin-bottom: 32px;
+      }
+
+      section h2 {
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #b97a43;
+        padding-bottom: 6px;
+        color: #5d4037;
+      }
+
+      section p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #4e342e;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 12px;
+        box-shadow: none;
+      }
+
+      .all-img {
+        max-width: 300px;
+        display: block;
+        margin: 12px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(101, 67, 33, 0.3);
+      }
+
+      /* Responsive font sizes */
+      @media (max-width: 900px) {
+        header h1 {
+          font-size: 2rem;
+        }
+        section h2 {
+          font-size: 1.4rem;
+        }
+        nav a {
+          font-size: 0.9rem;
+          padding: 6px 10px;
+        }
+      }
+
+      /* Responsive nav and menu button */
+      @media (max-width: 480px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+          border-bottom: none;
+          display: none; /* hidden by default, toggled by menu button */
+        }
+        nav.show {
+          display: flex;
+        }
+        nav a {
+          margin: 8px 0;
+          width: 100%;
+          padding: 10px 15px;
+          border-radius: 0;
+          font-size: 1.1rem;
+        }
+        .menu-button {
+          display: block;
+          background: #b97a43;
+          border: none;
+          color: #fff8f0;
+          font-size: 1.5rem;
+          padding: 10px 15px;
+          cursor: pointer;
+          border-radius: 8px;
+          margin: 12px auto;
+          width: 100%;
+          text-align: left;
+          box-sizing: border-box;
+        }
+      }
+
+      /* Hide menu button on larger screens */
+      .menu-button {
+        display: none;
+      }
+
+      .btn-container {
+        text-align: center;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Discover Ethiopia</h1>
+      <p>A vibrant country rich in history, culture, and nature</p>
+    </header>
+    <nav aria-label="Primary navigation">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#culture" class="nav-link">Culture</a>
+      <a href="#history" class="nav-link">History</a>
+      <a href="pages/index.html" class="nav-link">National Parks</a>
+      <a href="#cuisine" class="nav-link">Cuisine</a>
+    </nav>
+
+    <section id="about" tabindex="0" aria-label="About Ethiopia">
+      <h2>About Ethiopia</h2>
+      <p>
+        Ethiopia is a diverse and ancient country located in the Horn of Africa.
+        It is known for its stunning landscapes, unique wildlife, rich cultural
+        heritage, and vibrant people. As one of the oldest nations in the world,
+        Ethiopia offers an extraordinary blend of history and nature.
+      </p>
+      <img src="img/shutterstock_1422220883-1536x1536.avif" class="all-img" />
+    </section>
+
+    <section id="culture" tabindex="0" aria-label="Ethiopian Culture">
+      <h2>Culture</h2>
+      <p>
+        Ethiopia is famous for its colorful festivals, distinctive coffee
+        ceremonies, traditional music and dance, and diverse ethnic groups. The
+        Ethiopia Orthodox Church has greatly influenced the arts and daily life.
+        Amharic is the official language, but over 80 languages are spoken.
+      </p>
+      <img src="img/maxresdefault.jpg" class="all-img" />
+    </section>
+
+    <section id="history" tabindex="0" aria-label="History of Ethiopia">
+      <h2>History</h2>
+      <p>
+        Ethiopia is considered the cradle of mankind, with archaeological finds
+        dating back millions of years. It was never colonized, preserving its
+        sovereignty and culture. Famous historical sites include Axum’s
+        obelisks, the castles of Gondar, and the rock-hewn churches of Lalibela.
+      </p>
+      <img src="img/axum_obelisk.jpg" class="all-img" />
+    </section>
+
+    <section id="parks" tabindex="0" aria-label="National Parks of Ethiopia">
+      <h2>National Parks</h2>
+      <p>
+        Ethiopia offers breathtaking national parks like Simien Mountains, Bale
+        Mountains, and Awash National Park. These parks offer unique wildlife
+        including the Ethiopian wolf, gelada baboon, and diverse bird species,
+        plus spectacular hiking and nature experiences.
+      </p>
+      <img
+        src="img/Simien Mountains National Park landscape.jpg"
+        class="all-img"
+      />
+      <div class="btn-container">
+        <a class="btn" href="pages/index.html">About Parks</a>
+      </div>
+    </section>
+
+    <section id="cuisine" tabindex="0" aria-label="Ethiopian Cuisine">
+      <h2>Cuisine</h2>
+      <p>
+        Ethiopian cuisine is famous worldwide for its injera (flatbread) and
+        spicy stews known as wats. Shared meals and coffee ceremonies are
+        integral parts of Ethiopian hospitality and culture, providing a taste
+        of the country’s warmth and tradition.
+      </p>
+      <img src="img/Beyainatu.jpeg" class="all-img" />
+    </section>
+
+    <script>
+      // Smooth scrolling and active nav highlighting
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").slice(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+          document
+            .querySelectorAll("nav a")
+            .forEach((a) => a.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      // Highlight nav link on scroll
+      const sections = [...document.querySelectorAll("section")];
+      const navLinks = [...document.querySelectorAll("nav a")];
+
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + id
+              );
+            });
+          }
+        });
+      }, options);
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
+  </body>
+</html>

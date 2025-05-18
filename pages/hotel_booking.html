@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Hotel Booking - Ethiopia Travel</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+      /* Reset and base */
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Nunito", sans-serif;
+        background: linear-gradient(135deg, #a8d5ba, #5c832f);
+        color: #1e2d14;
+        overflow-x: hidden;
+      }
+      .p-tag {
+        font-size: 100px;
+      }
+      .img {
+        height: 20px;
+        width: 20px;
+      }
+      header {
+        text-align: center;
+        margin: 20px auto 12px;
+        max-width: 900px;
+      }
+
+      header h1 {
+        color: #3a613a;
+        margin-bottom: 5px;
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+        color: #2f4f2f;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto 40px;
+        padding: 0 15px;
+      }
+
+      section {
+        background: #e9f0e8;
+        padding: 20px;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      }
+
+      section h2 {
+        color: #265326;
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 1.6rem;
+        border-bottom: 2px solid #519657;
+        padding-bottom: 6px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px 0;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      select,
+      input[type="number"] {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 6px;
+        border: 1.8px solid #a3c18c;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="date"]:focus,
+      select:focus,
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #4c7d1a;
+      }
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        background: #4c7d1a;
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: none;
+        padding: 14px 0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background: #3a5e11;
+      }
+
+      .confirmation {
+        background: #d6f3d6;
+        color: #2a702a;
+        border: 1.5px solid #4caf50;
+        border-radius: 8px;
+        padding: 14px;
+        margin-top: 16px;
+        font-size: 1rem;
+        user-select: none;
+      }
+      .btn {
+        background-color: #0071e3;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-right: 15px;
+        text-decoration: none;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+      /* Responsive text and spacings */
+      @media (max-width: 900px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+        section h2 {
+          font-size: 1.3rem;
+        }
+        button {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        main {
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="img">
+        <a href="../index.html"
+          ><img src="../img/home.svg" alt="home page"
+        /></a>
+      </div>
+      <h1>Book your hotel and start your Ethiopian adventure</h1>
+    </header>
+    <main>
+      <section aria-labelledby="hotelBookingTitle">
+        <h2 id="hotelBookingTitle">Hotel Booking</h2>
+        <form
+          id="hotelBookingForm"
+          aria-describedby="hotelBookingDesc"
+          novalidate
+        >
+          <p id="hotelBookingDesc" style="font-size: 0.9rem; color: #3a613a">
+            Choose your hotel and stay dates to start your Ethiopian adventure.
+          </p>
+          <label for="hotelName">Select Hotel:</label>
+          <select id="hotelName" name="hotelName" required aria-required="true">
+            <option value="">-- Choose a Hotel --</option>
+            <option value="addis-luxe">Addis Luxe Hotel</option>
+            <option value="bahir-dar-inn">Bahir Dar Inn</option>
+            <option value="axum-palace">Axum Palace</option>
+            <option value="lalibela-heritage">Lalibela Heritage</option>
+          </select>
+          <label for="checkIn">Check-in Date:</label>
+          <input
+            type="date"
+            id="checkIn"
+            name="checkIn"
+            required
+            aria-required="true"
+          />
+          <label for="checkOut">Check-out Date:</label>
+          <input
+            type="date"
+            id="checkOut"
+            name="checkOut"
+            required
+            aria-required="true"
+          />
+          <label for="hotelGuests">Number of Guests:</label>
+          <input
+            type="number"
+            id="hotelGuests"
+            name="hotelGuests"
+            min="1"
+            max="10"
+            value="1"
+            required
+            aria-required="true"
+          />
+          <button type="submit" aria-label="Book Hotel">Book Hotel</button>
+        </form>
+        <div
+          id="hotelConfirmation"
+          class="confirmation"
+          role="alert"
+          aria-live="polite"
+          style="display: none"
+        ></div>
+      </section>
+      <a class="btn" href="../pages/park_booking.html">Park booking</a>
+    </main>
+
+    <script>
+      // Utility function to format dates nicely
+      function formatDate(dateStr) {
+        const options = { year: "numeric", month: "short", day: "numeric" };
+        const date = new Date(dateStr + "T00:00:00");
+        if (isNaN(date)) return dateStr;
+        return date.toLocaleDateString(undefined, options);
+      }
+
+      // Hotel booking form handling
+      const hotelForm = document.getElementById("hotelBookingForm");
+      const hotelConfirm = document.getElementById("hotelConfirmation");
+
+      hotelForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Validate date logic
+        const checkIn = hotelForm.checkIn.value;
+        const checkOut = hotelForm.checkOut.value;
+
+        if (!hotelForm.hotelName.value) {
+          alert("Please select a hotel.");
+          return;
+        }
+        if (!checkIn) {
+          alert("Please select check-in date.");
+          return;
+        }
+        if (!checkOut) {
+          alert("Please select check-out date.");
+          return;
+        }
+        if (new Date(checkOut) <= new Date(checkIn)) {
+          alert("Check-out date must be after check-in date.");
+          return;
+        }
+        const guests = parseInt(hotelForm.hotelGuests.value);
+        if (isNaN(guests) || guests < 1) {
+          alert("Please enter a valid number of guests.");
+          return;
+        }
+
+        // Show confirmation message
+        const hotelNames = {
+          "addis-luxe": "Addis Luxe Hotel",
+          "bahir-dar-inn": "Bahir Dar Inn",
+          "axum-palace": "Axum Palace",
+          "lalibela-heritage": "Lalibela Heritage",
+        };
+
+        hotelConfirm.style.display = "block";
+        hotelConfirm.textContent = `Thank you! Your booking at ${
+          hotelNames[hotelForm.hotelName.value]
+        } from ${formatDate(checkIn)} to ${formatDate(
+          checkOut
+        )} for ${guests} guest(s) has been received. We look forward to welcoming you to Ethiopia!`;
+
+        // Clear form after successful booking
+        hotelForm.reset();
+        hotelForm.hotelGuests.value = 1;
+      });
+    </script>
+  </body>
+</html>
